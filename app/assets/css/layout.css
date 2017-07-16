@@ -1,0 +1,11 @@
+body {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.ui-container { width: 990px; margin: 10px auto; text-align: left; }
+
+a:link, a:visited { color: #08c; text-decoration: none;}
+a:hover { text-decoration: underline; }

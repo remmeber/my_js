@@ -1,0 +1,15 @@
+node_modules/
+coverage/
+uiweb/
+dist/
+logs/
+*-run/
+npm-debug.log
+jars/
+app/proxy*
+fntest/.totoro-fn-tmp
+assembly/
+.idea
+run/
+
+mocks_data/proxy/**/__*

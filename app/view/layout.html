@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="{{keywords}}" />
+    <meta name="description" content="{{description}}" />
+    <link rel="icon" href="https://i.alipayobjects.com/common/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="https://i.alipayobjects.com/common/favicon/favicon.ico" type="image/x-icon" />
+    {% block head %}
+      {# dns prefetch #}
+      <link href="https://a.alipayobjects.com" rel="dns-prefetch" />
+      <link href="https://app.alipay.com" rel="dns-prefetch" />
+      <link href="https://my.alipay.com" rel="dns-prefetch" />
+      <link href="https://lab.alipay.com" rel="dns-prefetch" />
+      <link href="https://cashier.alipay.com" rel="dns-prefetch" />
+      <link href="https://financeprod.alipay.com" rel="dns-prefetch" />
+      <link href="https://shenghuo.alipay.com" rel="dns-prefetch" />
+
+      {% include "/alipay/tracker/iconfont.vm" %}
+      {% include "/alipay/tracker/monitor.vm" %}
+      {% include "/alipay/tracker/seajs.vm" %}
+      {% include "/alipay/tracker/tracker_time.vm" %}
+
+      {% require "assets/css/layout.css" %}
+    {% endblock %}
+  </head>
+  <!--[if lt IE 7]><body class="ie6 "><![endif]-->
+  <!--[if IE 7]><body class="ie7 "><![endif]-->
+  <!--[if IE 8]><body class="ie8 "><![endif]-->
+  <!--[if IE 9]><body class="ie9 "><![endif]-->
+  <!--[if !IE]><!--><body><!--<![endif]-->
+  {% block nav %}{% include "/public/common/uninav/nav.vm" %}{% endblock %}
+
+  <div id="container" class="ui-container">
+  {% block body %}{% endblock %}
+  </div>
+
+  {% block foot %}
+    {% include "/component/footCommon.vm" %}
+    {% include "/alipay/foot/cliveService.vm" %}
+    {% include "/alipay/tracker/tracker.vm" %}
+    {% if heatTracker %}{% include "/alipay/tracker/heat_tracker.vm" %}{% endif %}
+  {% endblock %}
+  </body>
+</html>

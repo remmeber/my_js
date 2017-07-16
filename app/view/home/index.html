@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% set title = "这是一个 alipay 示例应用 － 支付宝" %}
+
+{% block body %}
+{% require "assets/css/home.css" %}
+{% require "assets/js/home.js" %}
+
+<div class="jumbotron">
+    <h1>欢迎, {{userName}}！</h1>
+    <p>这是一个基于 Chair 的 Alipay 示例应用.</p>
+    <h2>基本信息</h2>
+    <ul>
+        <li class="email">邮箱: {{userInfo.email}}</li>
+        <li class="mobile">手机: {{userInfo.bindedMobile}}</li>
+        <li>登录方式: {{userInfo.logonType}}</li>
+        <li>登录账户: {{userInfo.logonId}}</li>
+        <li>认证时间:
+            {% if userInfo.signDate %}
+            <span class="signed-user">{{ userInfo.signDate }}</span>
+            </b>
+            {% else %}
+            <span class="unsign-user">未认证</span>
+            {% endif %}
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h2>使用 pagemock 功能，你甚至不需要写代码就能开发前端功能了</h2>
+    <p>mock 用户页面</a></p>
+    <ul>
+        <li><a href="/portal/i.htm?__scene=default.js">mock 认证用户</a></li>
+        <li><a href="/portal/i.htm?__scene=unsign.js">mock 未认证用户</a></li>
+        <li><a href="/portal/i.htm?__scene=email_login.js">mock 邮箱用户</a></li>
+        <li><a href="/portal/i.htm?__scene=mobile_login.js">mock 手机用户</a></li>
+    </ul>
+</div>
+
+{% endblock %}

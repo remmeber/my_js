@@ -1,0 +1,46 @@
+{
+  "name": "Chair_Demo",
+  "version": "1.0.0",
+  "description": "基于 chair 的 alipay 示例应用",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "chair": "release-1.4",
+    "@ali/chair-atool": "^5.4.3",
+    "enums": "^1.0.0"
+  },
+  "devDependencies": {
+    "@ali/ci": "3",
+    "@ali/mm": "6",
+    "@alipay/chair-bin": "3",
+    "eslint": "3",
+    "eslint-config-egg": "4"
+  },
+  "engines": {
+    "install-alinode": "2.1.3"
+  },
+  "scripts": {
+    "init": "chair-bin fengdie && chair-bin cms --default alipay && npm run proxy",
+    "proxy": "chair-bin proxy",
+    "dev": "chair-bin dev",
+    "debug": "chair-bin debug",
+    "https": "chair-bin dev --https",
+    "lint": "eslint .",
+    "cluster": "chair-bin dev --cluster",
+    "test": "npm run lint && chair-bin test",
+    "test-local": "chair-bin test",
+    "test-cov": "npm run lint && chair-bin cov",
+    "ci": "npm run lint && npm run init && chair-bin ci",
+    "build": "chair-atool"
+  },
+  "config": {
+    "jar2proxy": true,
+    "buildAssets": true
+  },
+  "chair": {
+    "autoproxy": true
+  },
+  "private": true
+}
